@@ -1,2 +1,2 @@
-AZ= ["us-east-1c", "ua-east-1d"]
+AZ= ["us-east-1c", "us-east-1d"]
 SUBNETS = 2
