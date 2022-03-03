@@ -16,7 +16,7 @@ prod prod-apply:
 dev-destroy:
 	rm -rf .terraform
 	terraform init -backend-config=env-dev/backend.tfvars
-	terraform destroy -auto-approve -var-file=env-dev/main.tfvars
+	terraform destroy -auto-approve -var-file=env-dev/main.tfvars -target=aws_nat_gateway.ngw -target=aws_eip.public
 
 prod-destroy:
 	rm -rf .terraform
