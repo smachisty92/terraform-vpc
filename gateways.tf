@@ -7,14 +7,14 @@ resource "aws_internet_gateway" "gw" {
 }
 
 resource "aws_eip" "public" {
-
+vpc = true
 }
 
 resource "aws_nat_gateway" "e" {
-  allocation_id =
-  subnet_id =
+  allocation_id =aws_eip.public
+  subnet_id =aws_subnet.public-subnet.*.id[0]
   tags = {
     Name = "NAT-gw"
   }
-  depends_on = []
+  depends_on = [aws_internet_gateway.gw]
 }
