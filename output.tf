@@ -34,6 +34,6 @@ output "INTERNAL_HOSTED_ZONEID" {
   value = data.aws_route53_zone.internal.zone_id
 }
 
-output "INTERNAL_HOSTED_NAME" {
+output "INTERNAL_HOSTED_ZONE_NAME" {
   value = data.aws_route53_zone.internal.name
 }
